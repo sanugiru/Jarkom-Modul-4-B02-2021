@@ -44,4 +44,41 @@
 - **Langkah 6 -** Melakukan Ping antar Server, Router atau PC
 ![VLSM-Ping-1](/screenshots/vlsm-ping-1.png)
 ![VLSM-Ping-2](/screenshots/vlsm-ping-2.png)
-### B. CIDR Menggunakan GNS3
+### B. CIDR Menggunakan GNS3  
+#### Subnetting 
+- **Langkah 1:** Menentukan subnet yang ada dalam topologi dan melakukan labelling netmask terhadap masing-masing subnet. Penggabungan dilakukan hingga didapatkan satu subnet besar.
+![subnet-dan-labelling](/screenshots/cidr-1.jpg)
+- **Langkah 2:** Menggabungkan subnet paling bawah di dalam topologi (paling jauh dari NAT)
+	- iterasi 1
+![subnet1](/screenshots/cidr-2.jpg)
+	- iterasi 2
+![subnet2](/screenshots/cidr-3.jpg)
+	- iterasi 3
+![subnet3](/screenshots/cidr-4.jpg)
+	- iterasi 4
+![subnet4](/screenshots/cidr-5.jpg)
+	- iterasi 5
+![subnet5g](/screenshots/cidr-6.jpg)
+	- iterasi 6
+![subnet6](/screenshots/cidr-7.jpg)
+	- iterasi 7
+![subnet7](/screenshots/cidr-8.jpg)
+
+
+- **Langkah 3:** Dari proses penggabungan yang telah dilakukan, dari gambar di atas bisa kita lihat didapatkan sebuah subnet dengan netmask /15.
+- **Langkah 4:** Selanjutnya dilakukan perhitungan pembagian IP menggunakan pohon ip
+![pembagian-ip](/screenshots/cidr-9.jpg)  
+- **Langkah 5:** berdasarkan perhitungan tersebut, maka didapatkan pembagian IP sebagai berikut.
+![hasil](/screenshots/cidr-ip.png) 
+
+##### Konfigurasi pada GNS3
+- FOOSHA
+- WATER7
+- PUCCI
+- GUANHAO
+- ALABASTA
+- OIMO
+- SEASTONE
+
+#### Routing
+
