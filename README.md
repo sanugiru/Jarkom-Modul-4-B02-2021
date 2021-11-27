@@ -5,9 +5,6 @@
 - 05111940000086 	[Nabil Fikri Arief](https://www.github.com/alwaysyu)
 - 05111940000158 	[Shahnaaz Anisa Firdaus](https://www.github.com/sanugiru)
 
-## Topologi dan Soal
-![Topologi](/screenshots/topologi.png)
-
 ### A. VLSM Menggunakan CPT
 - **Langkah 1 -** Menentukan subnet yang ada pada topologi
 ![Topologi-VLSM](/screenshots/topologi-vlsm.png)
