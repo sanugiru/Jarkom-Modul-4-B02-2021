@@ -5,7 +5,7 @@
 - 05111940000086 	[Nabil Fikri Arief](https://www.github.com/alwaysyu)
 - 05111940000158 	[Shahnaaz Anisa Firdaus](https://www.github.com/sanugiru)
 
-### A. VLSM Menggunakan CPT
+## A. VLSM Menggunakan CPT
 - **Langkah 1 -** Menentukan subnet yang ada pada topologi
 ![Topologi-VLSM](/screenshots/topologi-vlsm.png)
  dan kemudian menentukan jumlah IP dan netmask pada tiap subnet
@@ -41,8 +41,8 @@
 - **Langkah 6 -** Melakukan Ping antar Server, Router atau PC
 ![VLSM-Ping-1](/screenshots/vlsm-ping-1.png)
 ![VLSM-Ping-2](/screenshots/vlsm-ping-2.png)
-### B. CIDR Menggunakan GNS3  
-#### Subnetting 
+## B. CIDR Menggunakan GNS3  
+### Subnetting 
 - **Langkah 1:** Menentukan subnet yang ada dalam topologi dan melakukan labelling netmask terhadap masing-masing subnet. Penggabungan dilakukan hingga didapatkan satu subnet besar.
 ![subnet-dan-labelling](/screenshots/cidr-1.jpg)
 - **Langkah 2:** Menggabungkan subnet paling bawah di dalam topologi (paling jauh dari NAT)
@@ -68,7 +68,7 @@
 - **Langkah 5:** berdasarkan perhitungan tersebut, maka didapatkan pembagian IP sebagai berikut.
 ![hasil](/screenshots/cidr-ip.png) 
 
-##### Konfigurasi pada GNS3
+#### Konfigurasi pada GNS3
 Konfigurasi dilakukan menggunakan langkah yang pernah dilakukan pada modul GNS3
 - FOOSHA
 ```
@@ -222,7 +222,7 @@ iface eth1 inet static
 	netmask 255.255.252.0
 ```
 
-#### Routing
+### Routing
 Lakukan routing pada router-router dengan menjalankan command pada console masing-masing router.
 - FOOSHA
 ```
@@ -258,3 +258,17 @@ route add -net 0.0.0.0 netmask 0.0.0.0 gw 10.8.16.1
 route add -net 0.0.0.0 netmask 0.0.0.0 gw 10.8.4.1
 ```
 
+### Testing
+Jalankan command di bawah pada FOOSHA:
+```
+iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE -s 10.8.0.0/15
+```
+Kemudian jalankan command di bawah pada semua node agar terhubung dengan internet
+```
+echo nameserver 192.168.122.1 > /etc/resolv.conf
+```
+Test `ping google.com` dari node ELENA
+![test](/screenshots/cidr-10.png) 
+
+## Kendala
+- Kesulitan dengan subnetting dan routing menggunakan CIDR dan konfigurasi pada GNS3-nya.
