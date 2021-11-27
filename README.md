@@ -41,4 +41,7 @@
 <br>![VLSM-Routing-Seastone](/screenshots/vlsm-seastone.png)
 <br>  - **Alabasta**
 <br>![VLSM-Routing-Alabasta](/screenshots/vlsm-alabasta.png)
+- **Langkah 6 -** Melakukan Ping antar Server, Router atau PC
+![VLSM-Ping-1](/screenshots/vlsm-ping-1.png)
+![VLSM-Ping-2](/screenshots/vlsm-ping-2.png)
 ### B. CIDR Menggunakan GNS3
